@@ -1,0 +1,42 @@
+/*
+$fields = [
+  'fname' => 'Cino',
+  'lname' => 'Aran',
+  'email' => 'cino@cino.de'
+];
+$contactsQ = $db->update('contacts', 4, $fields);
+
+$contactsQ = $db->delete('contacts', 6);
+
+$contacts = $db->query("SELECT * FROM contacts ORDER BY lname, fname")->first();
+//$contacts = $contactsQ->results(); Also possible for results().
+
+
+$columns = $db->get_columns('contacts');
+$columns = $db->lastID();
+
+Something like that we looking for
+$contact = $db->find('contacts', [
+'condition' => ['lname' => '?', 'fname' => 'Cino'],AUCH MÖGLICH ALS ARRAY
+
+'bind' => ['Aran'],
+'order' => "lname, fname",
+'limit' => 4
+]);
+
+
+$contact = $db->find('contacts', [
+'conditions' => ['fname = ?', 'lname = ?'],
+'bind' => ['Cino', 'Aran'],
+'order' => "lname, fname",
+'limit' => 1
+]);
+
+
+$contact = $db->findFirst('contacts', [
+'conditions' => ['fname = ?', 'lname = ?'],
+'bind' => ['Cino', 'Aran'],
+
+]);
+dnd($contact);
+*/
